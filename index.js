@@ -2,7 +2,34 @@ var order = document.getElementById("orderHere");
 var rowQuantity = 10;
 var rowQHTML = document.getElementById("ROQ");
 const form = document.getElementById('orderForm');
+var disSel = document.getElementById("QUA");
+var total = 0;
 var items = [
+    {
+        "Id": "HUV",
+        "Name": "Hùm Viên",
+        "Price": 80
+    },
+    {
+        "Id": "TDH",
+        "Name": "Tôm Định Hình",
+        "Price": 80
+    },
+    {
+        "Id": "GAG",
+        "Name": "Gà Giòn",
+        "Price": 117
+    },
+    {
+        "Id": "DHM",
+        "Name": "Đậu Hũ Mặt Cười",
+        "Price": 95
+    },
+    {
+        "Id": "PMQ",
+        "Name": "Phô Mai Que",
+        "Price": 77
+    },
     {
         "Id": "BAB",
         "Name": "Bắp Bò",
@@ -118,13 +145,20 @@ var items = [
         "Name": "Mực Xù",
         "Price": 85
     },
+    {
+        "Id": "LUH",
+        "Name": "Luỡi Heo",
+        "Price": 68
+    },
+    {
+        "Id": "HER",
+        "Name": "Heo Rừng",
+        "Price": 83
+    }
 ]
 
 var selectedData = [
-    {
-        "Value": "",
-        "Quantity": 0,
-    },
+    { "Value": "", "Quantity": 0 }
 ];
 
 function editOrder(i, v, q) {
@@ -146,18 +180,19 @@ function addOrder(i) {
         + '<select  class="form-control col" id="' + selectListId + '" name="' + selectListId + '"></select>'
         + '</div >'
         + '<div class="form-group col-sm">'
-        + '<input type="number" min="0" class="form-control" id="SOL' + i + '" name="SOL' + i + '" placeholder="Số lượng">'
+        + '<input type="number" value="0" min="0" class="form-control" id="SOL' + i + '" name="SOL' + i + '" placeholder="Số lượng">'
         + '</div>'
         + '<div class="col-sm">'
-        + '<p id="v' + i + '">0</p></div>'
+        + '<p id="v' + i + '">0 VND</p></div>'
         + '</div>';
 
     selectList = document.getElementById(selectListId);
 
     items.forEach((e) => { selectList.innerHTML += '<option value="' + e['Id'] + '">' + e['Name'] + '</option>' });
+
     if (i === 1) {
         selectedData[0]["Value"] = selectList.value;
-        selectedData[0]["Quantity"] = 0;
+        selectedData[0]["Quantity"] = 0
     }
     else {
         selectedData.push({
@@ -201,37 +236,36 @@ function eventListenerQuant(i) {
     input.addEventListener("input", (e) => {
         var log = document.getElementById("v" + i);
         var selected = document.getElementById("MAH" + i);
-        console.log();
         var curItem = items.find((e) => e["Id"] === selected.value);
+        var price = 0;
 
-        log.innerHTML = e.target.value * curItem.Price + "000 VND";
+        if (selectedData[i - 1]["Quantity"] !== input.value) {
+            total -= selectedData[i - 1]["Quantity"] * curItem["Price"];
+            price = e.target.value * curItem["Price"];
+            total += price;
+        }
+        if (input.value === 0 || input.value === "") {
+            log.innerHTML = "0 VND";
+        }
+        else {
+            log.innerHTML = (price * 1000).toLocaleString('en-US') + " VND";
+        }
+
+        selectedData[i - 1]["Quantity"] = Number(input.value);
+        document.getElementById("Total").innerHTML = (total * 1000).toLocaleString('en-US') + " VND";
+
+        console.log(total);
 
     });
 
     input.addEventListener("keypress", (e) => {
-        var nextItem = "SOL" + i;
         if (i < rowQuantity && e.key === "Enter") {
-            nextItem = "MAH" + (i + 1);
+            var nextItem = "MAH" + (i + 1);
+            document.getElementById(nextItem).focus();
         }
         else if (i === rowQuantity && e.key === "Enter") {
             addNewOrder();
         }
-
-        document.getElementById(nextItem).focus();
-    })
-
-    input.addEventListener("change", () => {
-        var n = 0;
-        var l = 4;
-
-        while (l <= input.id.length) {
-            n += 10 * n + Number(input.id[l - 1]);
-            l++;
-        }
-
-        selectedData[n - 1]["Quantity"] = Number(input.value);
-
-        console.log(selectedData);
     })
 }
 
@@ -247,16 +281,28 @@ function eventListenerId(i) {
         document.getElementById(nextItem).focus();
     });
 
-    input.addEventListener("change", () => {
-        var n = 0;
-        var l = 4;
+    input.addEventListener("change", (e) => {
+        var log = document.getElementById("v" + i);
+        var price = 0;
+        
+        if (selectedData[i - 1]["Value"] !== input.value) {
+            var curItem = items.find((item)=>item["Id"] === e.target.value);
+            var oldItem = items.find((item)=>item["Id"] === selectedData[i -1]["Value"]);
 
-        while (l <= input.id.length) {
-            n += 10 * n + Number(input.id[l - 1]);
-            l++;
+            total -= selectedData[i -1]["Quantity"]*oldItem["Price"];
+            price =  selectedData[i -1]["Quantity"]*curItem["Price"];
+            total += price;
+        }
+        if (input.value === 0 || input.value === "") {
+            log.innerHTML = "0 VND";
+        }
+        else {
+            log.innerHTML = (price * 1000).toLocaleString('en-US') + " VND";
         }
 
-        selectedData[n - 1]["Value"] = input.value;
+        document.getElementById("Total").innerHTML = (total * 1000).toLocaleString('en-US') + " VND";
+
+        selectedData[i - 1]["Value"] = input.value;
 
         console.log(selectedData);
     })
@@ -278,14 +324,25 @@ function allListenerId() {
     }
 }
 
+function initOrderDef() {
+    order.innerHTML = "";
+    orderMultipleAdd(rowQuantity);
+    rowQHTML.value = rowQuantity.toString();
+    allListenerQuant();
+    allListenerId();
+}
+
 form.addEventListener('keypress', function (e) {
     if (e.key === "Enter") {
         e.preventDefault();
     }
 });
 
+disSel.addEventListener('change', () => {
+    rowQuantity = 10;
+    selectedData = [{ "Value": "", "Quantity": 0 }];
+    initOrderDef();
+})
+
 items.sort((a, b) => a["Id"].localeCompare(b["Id"]));
-orderMultipleAdd(rowQuantity);
-rowQHTML.value = rowQuantity.toString();
-allListenerQuant();
-allListenerId();
+initOrderDef();
