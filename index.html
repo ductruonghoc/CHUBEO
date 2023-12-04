@@ -4,9 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>DHT-CB</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 
@@ -15,31 +17,36 @@
         <div class=row>
             <div class=col-sm>
                 <form
-                    action="https://script.google.com/macros/s/AKfycbx3ymITtsiUdlekgOQB2UchwnKwXepQDzi49U86lY9bZD7_aDO41w7EtRiTs_Z6cHJ2lw/exec"
+                    action="https://script.google.com/macros/s/AKfycbxrMlC6KiMcu_YdtMwWPrEQ4VgVg_b5ONXZUAWNzYNP2AhHy16wv2h0TgWSmiobeWVklA/exec"
                     target="_blank" id="orderForm">
                     <div class="form-group row">
-                        <label for="QUA">Chọn quán</label>
+                        <label for="QUA">
+                            <h3><b>Chọn quán</b></h3>
+                        </label>
                         <select class="form-control" id="QUA" name="QUA">
                             <option value="07">Quận 7</option>
                             <option value="10">Quận 10</option>
                             <option value="12">Quận 12</option>
-                            <option value="BT">Quận Bình Thạnh  </option>
+                            <option value="BT">Quận Bình Thạnh</option>
                             <option value="TB">Quận Tân Bình</option>
                             <option value="TP">Quận Tân Phú</option>
                         </select>
                     </div>
                     <div id="orderHere" class="row">
                     </div>
+                    <div class="btn-group btn-group-lg" role="group">
+                        <button type="button" class="btn btn-outline-secondary" btn-sm" onclick="addNewOrder()"><i
+                                class="bi bi-plus-circle"></i></button>
+                    </div>
                     <div class="row">
                         <h3 class="col">Total</h3>
                         <h3 class="col" id="Total"></h3>
                     </div>
-                    <div>
-                        <button type="button" "btn btn-primary" onclick="addNewOrder()">+</button>
-                    </div>
-                    <input name="ROQ" style="display:none;" id="ROQ">
 
-                    <button type="submit" class="btn btn-primary row">Submit</button>
+                    <input name="ROQ" style="display:none;" id="ROQ">
+                    <div class="btn-group btn-group-lg" role="group">
+                        <button type="submit" class="btn btn-primary row">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>
