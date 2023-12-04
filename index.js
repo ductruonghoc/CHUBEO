@@ -33,7 +33,7 @@ var items = [
     {
         "Id": "BAB",
         "Name": "Bắp Bò",
-        "Price": 94
+        "Price": 86
     },
     {
         "Id": "BAN",
@@ -108,7 +108,7 @@ var items = [
     {
         "Id": "VUH",
         "Name": "Vú Heo",
-        "Price": 115
+        "Price": 100
     },
     {
         "Id": "MUH",
@@ -154,6 +154,11 @@ var items = [
         "Id": "HER",
         "Name": "Heo Rừng",
         "Price": 83
+    },
+    {
+        "Id": "CHA",
+        "Name": "Chạo",
+        "Price": 0
     }
 ]
 
