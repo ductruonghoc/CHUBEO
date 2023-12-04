@@ -158,7 +158,7 @@ var items = [
     {
         "Id": "CHA",
         "Name": "Chạo",
-        "Price": 0
+        "Price": 68
     }
 ]
 
@@ -346,6 +346,7 @@ form.addEventListener('keypress', function (e) {
 disSel.addEventListener('change', () => {
     rowQuantity = 10;
     selectedData = [{ "Value": "", "Quantity": 0 }];
+    total = 0;
     initOrderDef();
 })
 
