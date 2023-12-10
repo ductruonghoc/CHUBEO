@@ -123,12 +123,12 @@ var items = [
     {
         "Id": "DOS",
         "Name": "Dồi Sụn",
-        "Price": 65
+        "Price": 60
     },
     {
         "Id": "XUX",
         "Name": "Xúc Xích",
-        "Price": 75
+        "Price": 60
     },
     {
         "Id": "DHP",
