@@ -136,6 +136,11 @@ var items = [
         "Price": 95
     },
     {
+        "Id": "TOM",
+        "Name": "TÔM",
+        "Price": 90
+    },
+    {
         "Id": "MUX",
         "Name": "Mực Xoắn",
         "Price": 80
@@ -215,6 +220,8 @@ function orderMultipleAdd(i) {
         addOrder(j + 1);
         j++;
     }
+
+    return document.getElementById("MAH" + "1");
 }
 
 function addNewOrder() {
@@ -331,10 +338,11 @@ function allListenerId() {
 
 function initOrderDef() {
     order.innerHTML = "";
-    orderMultipleAdd(rowQuantity);
+    const firstData = orderMultipleAdd(rowQuantity);
     rowQHTML.value = rowQuantity.toString();
     allListenerQuant();
     allListenerId();
+    firstData.focus();
 }
 
 form.addEventListener('keypress', function (e) {
@@ -348,6 +356,7 @@ disSel.addEventListener('change', () => {
     selectedData = [{ "Value": "", "Quantity": 0 }];
     total = 0;
     initOrderDef();
+
 })
 
 items.sort((a, b) => a["Id"].localeCompare(b["Id"]));
