@@ -164,6 +164,11 @@ var items = [
         "Id": "CHA",
         "Name": "Chạo",
         "Price": 68
+    },
+    {
+        "Id": "GYM",
+        "Name": "Gymbap",
+        "Price": 76
     }
 ]
 
@@ -338,6 +343,7 @@ function allListenerId() {
 
 function initOrderDef() {
     order.innerHTML = "";
+    
     const firstData = orderMultipleAdd(rowQuantity);
     rowQHTML.value = rowQuantity.toString();
     allListenerQuant();
@@ -355,8 +361,8 @@ disSel.addEventListener('change', () => {
     rowQuantity = 10;
     selectedData = [{ "Value": "", "Quantity": 0 }];
     total = 0;
+    document.getElementById("Total").innerHTML = 0;
     initOrderDef();
-
 })
 
 items.sort((a, b) => a["Id"].localeCompare(b["Id"]));
