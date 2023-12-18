@@ -58,7 +58,7 @@ var items = [
     {
         "Id": "BOT",
         "Name": "Bò Tảng",
-        "Price": 91
+        "Price": 94
     },
     {
         "Id": "BOV",
