@@ -4,7 +4,7 @@
 }
 
 #orderHere{
-    max-height: 50vh;
+    max-height: 40vh;
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -17,4 +17,9 @@
 
 .btn-group button{
     max-width: fit-content;
+    margin: 0;
+    min-width: 8vw;
+    max-width: 8vw;
+    font-size: 0.8rem;
+    max-height: 5vh;
 }

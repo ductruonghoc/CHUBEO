@@ -4,6 +4,7 @@ var rowQHTML = document.getElementById("ROQ");
 const form = document.getElementById('orderForm');
 var disSel = document.getElementById("QUA");
 var total = 0;
+const orderButton = document.getElementById("orderButton");
 var items = [
     {
         "Id": "HUV",
@@ -363,6 +364,13 @@ disSel.addEventListener('change', () => {
     total = 0;
     document.getElementById("Total").innerHTML = 0;
     initOrderDef();
+})
+
+orderButton.addEventListener('keypress', (e)=>{
+    if(e.key === "Enter")
+    {
+        addNewOrder();
+    }
 })
 
 items.sort((a, b) => a["Id"].localeCompare(b["Id"]));
