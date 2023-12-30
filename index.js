@@ -170,6 +170,11 @@ var items = [
         "Id": "GYM",
         "Name": "Gymbap",
         "Price": 76
+    },
+    {
+        "Id": "BBC",
+        "Name": "BÁNH BAO CHIÊN",
+        "Price": 0
     }
 ]
 
