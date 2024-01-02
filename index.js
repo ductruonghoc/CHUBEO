@@ -173,8 +173,13 @@ var items = [
     },
     {
         "Id": "BBC",
-        "Name": "BÁNH BAO CHIÊN",
+        "Name": "Bánh Bao Chiên",
         "Price": 0
+    },
+    {
+        "Id": "TOV",
+        "Name": "Tôm Viên",
+        "Price": 55
     }
 ]
 
