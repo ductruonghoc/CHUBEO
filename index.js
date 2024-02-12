@@ -67,6 +67,11 @@ var items = [
         "Price": 55
     },
     {
+        "Id": "LOB",
+        "Name": "Lòng Bò",
+        "Price": 68
+    },
+    {
         "Id": "CAG",
         "Name": "Cánh Gà",
         "Price": 82
