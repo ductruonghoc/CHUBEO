@@ -44,7 +44,7 @@ var items = [
     {
         "Id": "BCB",
         "Name": "Ba Chỉ Bò",
-        "Price": 98
+        "Price": 100
     },
     {
         "Id": "BCH",
@@ -59,7 +59,7 @@ var items = [
     {
         "Id": "BOT",
         "Name": "Bò Tảng",
-        "Price": 97
+        "Price": 100
     },
     {
         "Id": "BOV",
