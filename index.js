@@ -49,7 +49,7 @@ var items = [
     {
         "Id": "BCB",
         "Name": "Ba Chỉ Bò",
-        "Price": 98
+        "Price": 100
     },
     {
         "Id": "BCH",
@@ -64,12 +64,17 @@ var items = [
     {
         "Id": "BOT",
         "Name": "Bò Tảng",
-        "Price": 94
+        "Price": 100
     },
     {
         "Id": "BOV",
         "Name": "Bò Viên",
         "Price": 55
+    },
+    {
+        "Id": "LOB",
+        "Name": "Lòng Bò",
+        "Price": 68
     },
     {
         "Id": "CAG",
@@ -114,7 +119,7 @@ var items = [
     {
         "Id": "VUH",
         "Name": "Vú Heo",
-        "Price": 100
+        "Price": 107
     },
     {
         "Id": "MUH",
@@ -134,7 +139,7 @@ var items = [
     {
         "Id": "XUX",
         "Name": "Xúc Xích",
-        "Price": 60
+        "Price": 69
     },
     {
         "Id": "DHP",
@@ -175,6 +180,26 @@ var items = [
         "Id": "GYM",
         "Name": "Gymbap",
         "Price": 76
+    },
+    {
+        "Id": "BBC",
+        "Name": "Bánh Bao Chiên",
+        "Price": 17
+    },
+    {
+        "Id": "TOV",
+        "Name": "Tôm Viên",
+        "Price": 55
+    },
+    {
+        "Id": "NCR",
+        "Name": "Nem Chua Rán",
+        "Price": 78
+    },
+    {
+        "Id": "KTC",
+        "Name": "Khoai Tây Cọng",
+        "Price": 58
     }
 ]
 
@@ -307,13 +332,13 @@ function eventListenerId(i) {
     input.addEventListener("change", (e) => {
         var log = document.getElementById("v" + i);
         var price = 0;
-        
-        if (selectedData[i - 1]["Value"] !== input.value) {
-            var curItem = items.find((item)=>item["Id"] === e.target.value);
-            var oldItem = items.find((item)=>item["Id"] === selectedData[i -1]["Value"]);
 
-            total -= selectedData[i -1]["Quantity"]*oldItem["Price"];
-            price =  selectedData[i -1]["Quantity"]*curItem["Price"];
+        if (selectedData[i - 1]["Value"] !== input.value) {
+            var curItem = items.find((item) => item["Id"] === e.target.value);
+            var oldItem = items.find((item) => item["Id"] === selectedData[i - 1]["Value"]);
+
+            total -= selectedData[i - 1]["Quantity"] * oldItem["Price"];
+            price = selectedData[i - 1]["Quantity"] * curItem["Price"];
             total += price;
         }
         if (input.value === 0 || input.value === "") {
@@ -349,7 +374,7 @@ function allListenerId() {
 
 function initOrderDef() {
     order.innerHTML = "";
-    
+
     const firstData = orderMultipleAdd(rowQuantity);
     rowQHTML.value = rowQuantity.toString();
     allListenerQuant();
@@ -371,9 +396,8 @@ disSel.addEventListener('change', () => {
     initOrderDef();
 })
 
-orderButton.addEventListener('keypress', (e)=>{
-    if(e.key === "Enter")
-    {
+orderButton.addEventListener('keypress', (e) => {
+    if (e.key === "Enter") {
         addNewOrder();
     }
 })
