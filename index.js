@@ -119,12 +119,12 @@ var items = [
     {
         "Id": "LUN",
         "Name": "Lườn Ngỗng",
-        "Price": 90
+        "Price": 91
     },
     {
         "Id": "VUH",
         "Name": "Vú Heo",
-        "Price": 107
+        "Price": 94
     },
     {
         "Id": "MUH",
@@ -134,7 +134,7 @@ var items = [
     {
         "Id": "RAT",
         "Name": "Râu Tuộc",
-        "Price": 56
+        "Price": 48
     },
     {
         "Id": "DOS",
@@ -144,7 +144,7 @@ var items = [
     {
         "Id": "XUX",
         "Name": "Xúc Xích",
-        "Price": 69
+        "Price": 58
     },
     {
         "Id": "DHP",
@@ -204,7 +204,7 @@ var items = [
     {
         "Id": "KTC",
         "Name": "Khoai Tây Cọng",
-        "Price": 58
+        "Price": 60
     }
 ]
 
