@@ -39,7 +39,7 @@ var items = [
     {
         "Id": "BAB",
         "Name": "Bắp Bò",
-        "Price": 86
+        "Price": 91
     },
     {
         "Id": "BAN",
@@ -49,12 +49,12 @@ var items = [
     {
         "Id": "BCB",
         "Name": "Ba Chỉ Bò",
-        "Price": 100
+        "Price": 105
     },
     {
         "Id": "BCH",
         "Name": "Ba Chỉ Heo",
-        "Price": 78
+        "Price": 80
     },
     {
         "Id": "BLL",
@@ -64,7 +64,7 @@ var items = [
     {
         "Id": "BOT",
         "Name": "Bò Tảng",
-        "Price": 100
+        "Price": 105
     },
     {
         "Id": "BOV",
@@ -79,7 +79,7 @@ var items = [
     {
         "Id": "CAG",
         "Name": "Cánh Gà",
-        "Price": 82
+        "Price": 87
     },
     {
         "Id": "CAV",
@@ -89,7 +89,7 @@ var items = [
     {
         "Id": "CCM",
         "Name": "Cốm Cam Mayo",
-        "Price": 70
+        "Price": 66
     },
     {
         "Id": "CHC",
@@ -99,17 +99,17 @@ var items = [
     {
         "Id": "CHG",
         "Name": "Chân Gà",
-        "Price": 89
+        "Price": 95
     },
     {
         "Id": "HET",
         "Name": "Heo Tảng",
-        "Price": 80
+        "Price": 83
     },
     {
         "Id": "PLN",
         "Name": "Phi Lê Nai",
-        "Price": 78
+        "Price": 81
     },
     {
         "Id": "LUN",
@@ -124,7 +124,7 @@ var items = [
     {
         "Id": "MUH",
         "Name": "Mực Hoa",
-        "Price": 47
+        "Price": 48
     },
     {
         "Id": "RAT",
@@ -169,7 +169,7 @@ var items = [
     {
         "Id": "HER",
         "Name": "Heo Rừng",
-        "Price": 83
+        "Price": 87
     },
     {
         "Id": "CHA",
