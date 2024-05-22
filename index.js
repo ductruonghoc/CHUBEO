@@ -107,6 +107,11 @@ var items = [
         "Price": 83
     },
     {
+        "Id": "THC",
+        "Name": "Thanh Cua",
+        "Price": 80
+    },
+    {
         "Id": "PLN",
         "Name": "Phi Lê Nai",
         "Price": 81
