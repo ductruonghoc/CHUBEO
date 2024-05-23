@@ -24,7 +24,7 @@ var items = [
     {
         "Id": "GAG",
         "Name": "Gà Giòn",
-        "Price": 85
+        "Price": 87
     },
     {
         "Id": "DHM",
@@ -59,7 +59,7 @@ var items = [
     {
         "Id": "BLL",
         "Name": "Bò Lá Lốt",
-        "Price": 80
+        "Price": 88
     },
     {
         "Id": "BOT",
@@ -94,7 +94,7 @@ var items = [
     {
         "Id": "CHC",
         "Name": "Chả Cá",
-        "Price": 80
+        "Price": 55
     },
     {
         "Id": "CHG",
