@@ -169,7 +169,7 @@ var items = [
     {
         "Id": "LUH",
         "Name": "Luỡi Heo",
-        "Price": 68
+        "Price": 88
     },
     {
         "Id": "HER",
